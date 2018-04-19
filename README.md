@@ -1,4 +1,4 @@
-# Auth
+# Auth [![GoDoc](https://godoc.org/github.com/go-mego/auth?status.svg)](https://godoc.org/github.com/go-mego/auth)
 
 Auth 套件能夠協助開發者進行最簡單的 HTTP Authorization 標頭使用者身份驗證。
 
