@@ -43,8 +43,8 @@ Auth 中介軟體也能夠套用到單一路由並與其他路由區隔驗證邏
 func main() {
 	m := mego.New()
 	// 限制單個路由必須符合指定的帳號與密碼。
-	m.Get("/", auth.New("myUsername", "myPassword"), func() string {
-		return "哈囉，世界！"
+	m.Get("/", auth.New("myUsername", "myPassword"), func() {
+		// ...
 	})
 	m.Run()
 }
@@ -58,7 +58,7 @@ func main() {
 func main() {
 	m := mego.New()
 	// 所有路由都必須符合其中一組帳號與密碼。
-	m.Use(auth.NewAccounts(auth.Accounts{
+	m.Use(auth.NewAccounts(&auth.Accounts{
 		"myUsername": "myPassword",
 		"myAdmin":    "mySecret",
 	}))
