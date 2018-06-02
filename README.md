@@ -1,4 +1,4 @@
-# Auth [![GoDoc](https://godoc.org/github.com/go-mego/auth?status.svg)](https://godoc.org/github.com/go-mego/auth)
+# Auth [![GoDoc](https://godoc.org/github.com/go-mego/auth?status.svg)](https://godoc.org/github.com/go-mego/auth) [![Coverage Status](https://coveralls.io/repos/github/go-mego/auth/badge.svg?branch=master)](https://coveralls.io/github/go-mego/auth?branch=master) [![Build Status](https://travis-ci.org/go-mego/auth.svg?branch=master)](https://travis-ci.org/go-mego/auth) [![Go Report Card](https://goreportcard.com/badge/github.com/go-mego/auth)](https://goreportcard.com/report/github.com/go-mego/auth)
 
 Auth 套件能夠協助開發者進行最簡單的 HTTP Authorization 標頭使用者身份驗證。
 
@@ -52,7 +52,7 @@ func main() {
 
 ## 多組帳號
 
-透過 `auth.NewAccounts` 並傳入 `auth.Accounts` 能以使用多組帳號與密碼，只要符合其中一組即為通過。
+透過 `auth.NewAccounts` 並傳入 `auth.Accounts` 以使用多組帳號與密碼，只要符合其中一組即為通過。
 
 ```go
 func main() {
