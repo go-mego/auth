@@ -1,6 +1,8 @@
 package main
 
 import (
+	"net/http"
+
 	"github.com/go-mego/auth"
 	"github.com/go-mego/mego"
 )
@@ -11,7 +13,7 @@ func main() {
 		"admin":      "admin",
 		"yamiodymel": "yamiodymel",
 	}), func(c *mego.Context) {
-		c.String(200, "Hello, world!")
+		c.String(http.StatusOK, "Hello, world!")
 	})
 	e.Run()
 }

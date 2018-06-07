@@ -1,6 +1,8 @@
 package main
 
 import (
+	"net/http"
+
 	"github.com/go-mego/auth"
 	"github.com/go-mego/mego"
 )
@@ -11,7 +13,7 @@ func main() {
 		// 這有可能造成時間差攻擊，正式場合請使用 `crypto/subtle`。
 		return user == "admin" && pass == "admin"
 	}), func(c *mego.Context) {
-		c.String(200, "Hello, world!")
+		c.String(http.StatusOK, "Hello, world!")
 	})
 	e.Run()
 }
