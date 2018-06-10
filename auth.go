@@ -14,7 +14,9 @@ func New(username string, password string) mego.HandlerFunc {
 		if !ok || !secureCompare(user, pass, username, password) {
 			c.Header("WWW-Authenticate", `Basic`)
 			c.AbortWithStatus(http.StatusUnauthorized)
+			return
 		}
+		c.Next()
 	}
 }
 
@@ -25,7 +27,9 @@ func NewFunc(handler func(username string, password string) bool) mego.HandlerFu
 		if !ok || !handler(user, pass) {
 			c.Header("WWW-Authenticate", `Basic`)
 			c.AbortWithStatus(http.StatusUnauthorized)
+			return
 		}
+		c.Next()
 	}
 }
 
@@ -49,7 +53,9 @@ func NewAccounts(accounts *Accounts) mego.HandlerFunc {
 		if !ok || !passed() {
 			c.Header("WWW-Authenticate", `Basic`)
 			c.AbortWithStatus(http.StatusUnauthorized)
+			return
 		}
+		c.Next()
 	}
 }
 
